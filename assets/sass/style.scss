@@ -61,7 +61,7 @@ h2.title-index{
     position: absolute;     
     }
 }
-/*  ----------------------------------------------- */
+// ------------------------------------------------------- 
 
 .paginate-links{
     text-align: center;
@@ -82,10 +82,14 @@ h2.title-index{
 }
 
 .nav-item{
-    border-right: .5px solid rgba(0,0,0,.5);
-    margin-right: 6px;
+    border-right: none; 
+    margin-right: 0px;
     &:last-child{
         border: none;
+    }
+    @media only screen and (min-width: 768px){
+        border-right: .5px solid rgba(0,0,0,.5);
+        margin-right: 6px;
     }
 }
 
@@ -109,4 +113,54 @@ footer{
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+// ------------------------- Navbar toggles classes ---------------- 
+
+.navbar-toggler{
+    border: none!important;
+
+    &:focus{
+        outline: none;
+    }
+}
+.icon-bar {
+    width: 22px; 
+    height: 2px;
+    background-color: #05181f;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 4px
+}
+ 
+.navbar-toggler {
+    border: none!important;
+    background: transparent!important;
+}
+
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+    margin-bottom: 3px;
+}
+
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
 }
